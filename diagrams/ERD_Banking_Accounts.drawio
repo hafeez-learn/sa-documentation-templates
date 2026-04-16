@@ -1,0 +1,131 @@
+<mxfile host="app.diagrams.net" modified="2026-04-16T16:41:00.000Z" agent="Mozilla/5.0" version="21.0.0">
+  <diagram name="ERD - Banking Database" id="banking-erd">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Account Table -->
+        <mxCell id="t1" value="ACCOUNT" style="swimlane;fontStyle=1;align=center;verticalAlign=top;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="200" height="250" as="geometry"/>
+        </mxCell>
+        <mxCell id="t1c1" value="id : BIGINT (PK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t1">
+          <mxGeometry y="40" width="200" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t1c2" value="account_number : VARCHAR(20) (UQ)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t1">
+          <mxGeometry y="70" width="200" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t1c3" value="holder_name : VARCHAR(100)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t1">
+          <mxGeometry y="100" width="200" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t1c4" value="nric : VARCHAR(20)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t1">
+          <mxGeometry y="130" width="200" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t1c5" value="balance : DECIMAL(15,2)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t1">
+          <mxGeometry y="160" width="200" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t1c6" value="status : VARCHAR(20)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t1">
+          <mxGeometry y="190" width="200" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t1c7" value="created_at : TIMESTAMP" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t1">
+          <mxGeometry y="220" width="200" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Transaction Table -->
+        <mxCell id="t2" value="TRANSACTION" style="swimlane;fontStyle=1;align=center;verticalAlign=top;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="400" y="100" width="220" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="t2c1" value="id : BIGINT (PK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t2">
+          <mxGeometry y="40" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t2c2" value="transaction_ref : VARCHAR(50) (UQ)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t2">
+          <mxGeometry y="70" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t2c3" value="from_account : VARCHAR(20) (FK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t2">
+          <mxGeometry y="100" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t2c4" value="to_account : VARCHAR(20) (FK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t2">
+          <mxGeometry y="130" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t2c5" value="amount : DECIMAL(15,2)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t2">
+          <mxGeometry y="160" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t2c6" value="type : VARCHAR(20)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t2">
+          <mxGeometry y="190" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t2c7" value="status : VARCHAR(20)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t2">
+          <mxGeometry y="220" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t2c8" value="created_at : TIMESTAMP" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t2">
+          <mxGeometry y="250" width="220" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Payment Table -->
+        <mxCell id="t3" value="PAYMENT" style="swimlane;fontStyle=1;align=center;verticalAlign=top;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="450" width="220" height="250" as="geometry"/>
+        </mxCell>
+        <mxCell id="t3c1" value="id : BIGINT (PK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t3">
+          <mxGeometry y="40" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t3c2" value="payment_ref : VARCHAR(50) (UQ)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t3">
+          <mxGeometry y="70" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t3c3" value="merchant_account : VARCHAR(20) (FK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t3">
+          <mxGeometry y="100" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t3c4" value="customer_account : VARCHAR(20) (FK)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t3">
+          <mxGeometry y="130" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t3c5" value="amount : DECIMAL(15,2)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t3">
+          <mxGeometry y="160" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t3c6" value="status : VARCHAR(20)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t3">
+          <mxGeometry y="190" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="t3c7" value="qr_data : TEXT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;spacingLeft=10;" vertex="1" parent="t3">
+          <mxGeometry y="220" width="220" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Relationships -->
+        <mxCell id="r1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=ERmany;endFill=0;" edge="1" parent="1" source="t1c2" target="t2c3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=ERmany;endFill=0;" edge="1" parent="1" source="t1c2" target="t2c4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=ERmany;endFill=0;" edge="1" parent="1" source="t1c2" target="t3c3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=ERmany;endFill=0;" edge="1" parent="1" source="t1c2" target="t3c4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Relationship Labels -->
+        <mxCell id="rl1" value="1 : N&#xa;(from_account)" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="300" y="130" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="rl2" value="1 : N&#xa;(to_account)" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="300" y="230" width="80" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="LEGEND" style="text;html=1;strokeColor=#333333;fillColor=#ffffff;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="720" y="100" width="100" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg1" value="PK = Primary Key" style="text;html=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="140" width="150" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg2" value="UQ = Unique Constraint" style="text;html=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="170" width="150" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg3" value="FK = Foreign Key" style="text;html=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="200" width="150" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg4" value="1 : N = One-to-Many" style="text;html=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="230" width="150" height="25" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

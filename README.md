@@ -15,6 +15,17 @@ A collection of templates and a banking case study for System Analysts. Based on
 | **Process Flows** | Swimlane diagrams, decision trees |
 | **Stakeholder Register** | RACI, communication plan |
 
+## 🎨 Diagrams (draw.io Format)
+
+Open any `.drawio` file in [draw.io](https://app.diagrams.net/) or VS Code with draw.io extension:
+
+| Diagram | Description |
+|---------|-------------|
+| **Banking_API_Architecture.drawio** | System architecture showing microservices, Kafka, databases |
+| **Sequence_Transfer_Flow.drawio** | Sequence diagram for fund transfer API call flow |
+| **ERD_Banking_Accounts.drawio** | Entity Relationship Diagram for account/transaction/payment tables |
+| **ProcessFlow_AccountCreation.drawio** | Swimlane process flow for account creation |
+
 ## 🏦 Case Study: Digital Banking API
 
 Real examples using a microservices banking platform:
@@ -40,6 +51,11 @@ sa-documentation-templates/
 │   └── banking-api/
 │       ├── USE_CASES_BANKING.md
 │       └── USER_STORIES_BANKING.md
+├── diagrams/
+│   ├── Banking_API_Architecture.drawio
+│   ├── Sequence_Transfer_Flow.drawio
+│   ├── ERD_Banking_Accounts.drawio
+│   └── ProcessFlow_AccountCreation.drawio
 └── README.md
 ```
 
@@ -72,13 +88,19 @@ Copy `templates/uat-test-cases/UAT_TEST_CASES.md`:
 - Document expected vs actual results
 - Include sign-off section
 
+### 5. Diagrams
+Open `.drawio` files in [draw.io](https://app.diagrams.net/):
+- Edit shapes, colors, connections
+- Export as PNG/SVG for presentations
+- Version control the XML source
+
 ## 📊 Deliverables Map
 
 | SDLC Phase | Deliverables |
 |------------|--------------|
 | **Inception** | Stakeholder Register, Vision Document |
-| **Elaboration** | Use Cases, NFRs, Data Dictionary |
-| **Construction** | UAT Test Cases, Process Flows |
+| **Elaboration** | Use Cases, NFRs, Data Dictionary, Architecture Diagram |
+| **Construction** | UAT Test Cases, Process Flows, ERD |
 | **Transition** | Final Documentation, Training Materials |
 
 ## 🔗 Related Projects
@@ -103,6 +125,7 @@ These documentation templates complement technical implementations:
 - **IIBA BABOK** - Business Analysis Body of Knowledge
 - **Agile Manifesto** - User story principles
 - **INVEST** - User story quality checklist
+- **UML 2.0** - Sequence, Class, Component diagrams
 
 ## 🤝 Contributing
 

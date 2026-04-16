@@ -1,0 +1,136 @@
+<mxfile host="app.diagrams.net" modified="2026-04-16T16:39:00.000Z" agent="Mozilla/5.0" version="21.0.0">
+  <diagram name="Banking API Architecture" id="banking-arch">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- External Users -->
+        <mxCell id="ext-user" value="Customer&#xa;(Mobile/Web)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#f5f5f5;strokeColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="100" y="200" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ext-admin" value="Admin&#xa;(Operations)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#f5f5f5;strokeColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="100" y="400" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ext-merchant" value="Merchant&#xa;(QR Payment)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fillColor=#f5f5f5;strokeColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="100" y="600" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- API Gateway -->
+        <mxCell id="gateway" value="API Gateway&#xa;(Authentication/Rate Limiting)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="220" y="350" width="160" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Account Service -->
+        <mxCell id="account-svc" value="Account Service&#xa;(8081)&#xa;• Create Account&#xa;• Check Balance&#xa;• Update Status" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="450" y="120" width="180" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- Transaction Service -->
+        <mxCell id="trans-svc" value="Transaction Service&#xa;(8082)&#xa;• Fund Transfer&#xa;• Transaction History&#xa;• Idempotency" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="450" y="300" width="180" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- Payment Service -->
+        <mxCell id="payment-svc" value="Payment API&#xa;(8083)&#xa;• Generate QR&#xa;• Confirm Payment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="450" y="480" width="180" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- Kafka Bus -->
+        <mxCell id="kafka" value="Apache Kafka&#xa;(Event Bus)&#xa;Topic: banking-events" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="700" y="300" width="150" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Audit Service -->
+        <mxCell id="audit-svc" value="Audit Service&#xa;(Kafka Consumer)&#xa;• Immutable Log&#xa;• Compliance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="920" y="200" width="150" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Notification Service -->
+        <mxCell id="notif-svc" value="Notification Service&#xa;(Kafka Consumer)&#xa;• Email/SMS/Push&#xa;• Retry Logic" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="920" y="400" width="150" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- MySQL Accounts -->
+        <mxCell id="mysql-accounts" value="MySQL&#xa;account_db" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="480" y="20" width="100" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- MySQL Transactions -->
+        <mxCell id="mysql-trans" value="MySQL&#xa;transaction_db" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="480" y="220" width="100" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- MySQL Payments -->
+        <mxCell id="mysql-payments" value="MySQL&#xa;payment_db" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="480" y="400" width="100" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="c1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="ext-user" target="gateway">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="ext-admin" target="gateway">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="ext-merchant" target="gateway">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="c4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="gateway" target="account-svc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="gateway" target="trans-svc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="gateway" target="payment-svc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="c7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;dashed=1;" edge="1" parent="1" source="account-svc" target="kafka">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;dashed=1;" edge="1" parent="1" source="trans-svc" target="kafka">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;dashed=1;" edge="1" parent="1" source="payment-svc" target="kafka">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="c10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d79b00;strokeWidth=2;dashed=1;" edge="1" parent="1" source="kafka" target="audit-svc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d79b00;strokeWidth=2;dashed=1;" edge="1" parent="1" source="kafka" target="notif-svc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="c12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b85450;strokeWidth=2;" edge="1" parent="1" source="account-svc" target="mysql-accounts">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b85450;strokeWidth=2;" edge="1" parent="1" source="trans-svc" target="mysql-trans">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="c14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#b85450;strokeWidth=2;" edge="1" parent="1" source="payment-svc" target="mysql-payments">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="LEGEND" style="text;html=1;strokeColor=#333333;fillColor=#ffffff;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="920" y="550" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg1" value="REST API (sync)" style="text;html=1;strokeWidth=2;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="920" y="585" width="120" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg2" value="Kafka Events (async)" style="text;html=1;dashed=1;strokeWidth=2;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="920" y="615" width="120" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg3" value="Database" style="text;html=1;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="920" y="645" width="120" height="25" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
