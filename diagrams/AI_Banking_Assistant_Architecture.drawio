@@ -1,0 +1,116 @@
+<mxfile host="app.diagrams.net" modified="2026-04-18T14:30:00.000Z" agent="5.0" version="22.1.0" type="device">
+  <diagram id="C1" name="Architecture">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- WhatsApp Users -->
+        <mxCell id="U1" value="User A&#xa;(+919902488844)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="340" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="U2" value="User B&#xa;(+6586983102)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="480" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- WhatsApp Cloud -->
+        <mxCell id="WC" value="WhatsApp&#xa;Cloud" style="cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="340" width="140" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- OpenClaw Gateway -->
+        <mxCell id="OC" value="OpenClaw&#xa;Gateway&#xa;(WebSocket)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="420" y="340" width="120" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Spring Boot API -->
+        <mxCell id="SB" value="AI Banking&#xa;Assistant API&#xa;(Spring Boot)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="620" y="340" width="140" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- RAG Service -->
+        <mxCell id="RAG" value="RAG Service&#xa;(LangChain4j)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="840" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Chat Service -->
+        <mxCell id="CS" value="Chat Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="840" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Intent Detection -->
+        <mxCell id="INT" value="Intent&#xa;Detection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="840" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- OpenAI -->
+        <mxCell id="OA" value="OpenAI&#xa;GPT-4o" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="300" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- PGVector -->
+        <mxCell id="PG" value="PGVector&#xa;(Knowledge Base)" style="cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=20;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="400" width="100" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Database -->
+        <mxCell id="DB" value="PostgreSQL&#xa;(Chat History)" style="cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=20;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="520" width="100" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows -->
+        <mxCell id="A1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;" edge="1" parent="1" source="U1" target="WC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;" edge="1" parent="1" source="U2" target="WC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;dashed=1;" edge="1" parent="1" source="WC" target="OC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;" edge="1" parent="1" source="OC" target="SB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;" edge="1" parent="1" source="SB" target="CS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;" edge="1" parent="1" source="SB" target="INT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;" edge="1" parent="1" source="SB" target="RAG">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;" edge="1" parent="1" source="RAG" target="OA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;" edge="1" parent="1" source="RAG" target="PG">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;" edge="1" parent="1" source="CS" target="DB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="L1" value="Legend" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="L2" value="WhatsApp Users" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="100" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="L3" value="External Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="120" y="110" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="L4" value="Application Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="120" y="160" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="L5" value="AI/ML Component" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="120" y="210" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="L6" value="Data Store" style="cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=20;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="120" y="260" width="100" height="50" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
