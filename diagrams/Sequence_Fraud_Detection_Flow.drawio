@@ -1,0 +1,174 @@
+<mxfile host="app.diagrams.net" modified="2026-04-18T15:05:00.000Z" agent="5.0" version="22.1.0" type="device">
+  <diagram id="C2" name="Sequence">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Participants -->
+        <mxCell id="P1" value="Banking&#xa;Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="P2" value="Kafka&#xa;(transactions)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="220" y="40" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="P3" value="Fraud&#xa;Engine" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="390" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="P4" value="Rule&#xa;Engine" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="550" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="P5" value="Anomaly&#xa;Detection" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="710" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="P6" value="Velocity&#xa;Check" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="870" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="P7" value="Redis" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="40" width="80" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Lifelines -->
+        <mxCell id="L1" value="" style="endArrow=none;html=1;dashed=1;strokeColor=#666666;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="100" as="sourcePoint" />
+            <mxPoint x="100" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="L2" value="" style="endArrow=none;html=1;dashed=1;strokeColor=#666666;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="265" y="100" as="sourcePoint" />
+            <mxPoint x="265" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="L3" value="" style="endArrow=none;html=1;dashed=1;strokeColor=#666666;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="100" as="sourcePoint" />
+            <mxPoint x="430" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="L4" value="" style="endArrow=none;html=1;dashed=1;strokeColor=#666666;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="100" as="sourcePoint" />
+            <mxPoint x="590" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="L5" value="" style="endArrow=none;html=1;dashed=1;strokeColor=#666666;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="750" y="100" as="sourcePoint" />
+            <mxPoint x="750" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="L6" value="" style="endArrow=none;html=1;dashed=1;strokeColor=#666666;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="910" y="100" as="sourcePoint" />
+            <mxPoint x="910" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="L7" value="" style="endArrow=none;html=1;dashed=1;strokeColor=#666666;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1070" y="100" as="sourcePoint" />
+            <mxPoint x="1070" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Messages -->
+        <mxCell id="M1" value="1. Transaction&#xa;Event" style="endArrow=forward;html=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="140" as="sourcePoint" />
+            <mxPoint x="265" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2" value="2. Publish to&#xa;transactions topic" style="endArrow=forward;html=1;dashed=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="265" y="180" as="sourcePoint" />
+            <mxPoint x="430" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M3" value="3. Consume&#xa;transaction" style="endArrow=forward;html=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="220" as="sourcePoint" />
+            <mxPoint x="590" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M4" value="4. Evaluate&#xa;rules" style="endArrow=forward;html=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="280" as="sourcePoint" />
+            <mxPoint x="590" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M5" value="5. Check velocity&#xa;(Redis INCR)" style="endArrow=forward;html=1;strokeColor=#9673a6;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="380" as="sourcePoint" />
+            <mxPoint x="750" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M6" value="6. velocity check" style="endArrow=forward;html=1;dashed=1;strokeColor=#9673a6;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="750" y="420" as="sourcePoint" />
+            <mxPoint x="1070" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M7" value="7. return count" style="endArrow=reverse;html=1;dashed=1;strokeColor=#9673a6;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1070" y="460" as="sourcePoint" />
+            <mxPoint x="750" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M8" value="8. ML anomaly&#xa;detection" style="endArrow=forward;html=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="500" as="sourcePoint" />
+            <mxPoint x="750" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M9" value="9. Calculate&#xa;anomaly score" style="endArrow=forward;html=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="750" y="540" as="sourcePoint" />
+            <mxPoint x="750" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M10" value="10. Return scores&#xa;(ML + Rules)" style="endArrow=reverse;html=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="640" as="sourcePoint" />
+            <mxPoint x="430" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M11" value="11. Combine&#xa;(60% Rules,&#xa;40% ML)" style="endArrow=forward;html=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="680" as="sourcePoint" />
+            <mxPoint x="430" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M12" value="12. Decision +&#xa;Publish alert" style="endArrow=forward;html=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="740" as="sourcePoint" />
+            <mxPoint x="265" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M13" value="13. Alert to&#xa;fraud-alerts topic" style="endArrow=forward;html=1;dashed=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="265" y="780" as="sourcePoint" />
+            <mxPoint x="100" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Return arrow for M3-M4 -->
+        <mxCell id="M14" value="rule matches + score" style="endArrow=reverse;html=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="320" as="sourcePoint" />
+            <mxPoint x="430" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Return arrow for M8-M9 -->
+        <mxCell id="M15" value="anomaly score" style="endArrow=reverse;html=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="750" y="580" as="sourcePoint" />
+            <mxPoint x="590" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
