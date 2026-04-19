@@ -34,6 +34,22 @@ Real examples using a microservices banking platform:
 - **User Stories:** Complete sprint backlog with acceptance criteria
 - **Covers:** REST APIs, event-driven architecture, distributed transactions
 
+## 🤖 Case Study: agent-sdk (TypeScript)
+
+AI Agent framework for Node.js with TypeScript:
+
+- **Use Cases:** Agent creation, function calling, multi-agent handoffs, guardrails, streaming
+- **User Stories:** Agent creation, tool registration, conversation memory, batch processing
+- **Covers:** TypeScript, Node.js, OpenAI/ Anthropic API integration, npm package
+
+## 🐍 Case Study: OpenAI-agents-python
+
+Python SDK matching OpenAI Agents SDK features:
+
+- **Use Cases:** Agent creation, function calling, handoffs, guardrails, tracing, streaming
+- **User Stories:** Agent creation, tool calling, MCP integration, batch processing
+- **Covers:** Python, OpenAI API, function calling, observability, async execution
+
 ## 📁 Project Structure
 
 ```
@@ -48,9 +64,15 @@ sa-documentation-templates/
 │   ├── process-flows/
 │   └── stakeholder-register/
 ├── case-study/
-│   └── banking-api/
-│       ├── USE_CASES_BANKING.md
-│       └── USER_STORIES_BANKING.md
+│   ├── banking-api/
+│   │   ├── USE_CASES_BANKING.md
+│   │   └── USER_STORIES_BANKING.md
+│   ├── agent-sdk/
+│   │   ├── USE_CASES.md
+│   │   └── USER_STORIES.md
+│   └── openai-agents-python/
+│       ├── USE_CASES.md
+│       └── USER_STORIES.md
 ├── diagrams/
 │   ├── Banking_API_Architecture.drawio
 │   ├── Sequence_Transfer_Flow.drawio
@@ -110,6 +132,8 @@ These documentation templates complement technical implementations:
 - [digital-banking-api-demo](https://github.com/hafeez-learn/digital-banking-api-demo) - REST microservices
 - [audit-notification-service](https://github.com/hafeez-learn/audit-notification-service) - Event-driven architecture
 - [k8s-observability-stack](https://github.com/hafeez-learn/k8s-observability-stack) - Kubernetes infrastructure
+- [agent-sdk](https://github.com/hafeez-learn/agent-sdk) - TypeScript AI Agent Framework
+- [OpenAI-agents-python](https://github.com/hafeez-learn/OpenAI-agents-python) - Python AI Agent SDK
 
 ## 💡 Tips for System Analysts
 
